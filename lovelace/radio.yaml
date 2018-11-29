@@ -1,0 +1,18 @@
+type: custom:card-modder
+card:
+  type: entities
+  title: Radio
+  show_header_toggle: true
+  entities:
+    - input_select.radio_channels
+    - input_select.radio_speakers
+    - script.radio_script
+    - type: divider
+    - entity: media_player.mpdserver
+      name: Právě hraje
+      type: "custom:mini-media-player"
+      artwork_border: true
+      group: true
+      hide_controls: true
+style:             
+  !include grey_card.yaml

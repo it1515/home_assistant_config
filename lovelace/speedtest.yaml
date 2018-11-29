@@ -1,0 +1,7 @@
+type: entities
+title: Rychlost internetu
+show_header_toggle: true
+entities:
+  - sensor.speedtest_ping
+  - sensor.speedtest_download
+  - sensor.speedtest_upload

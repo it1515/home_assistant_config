@@ -1,0 +1,19 @@
+switch.bigscreen:
+  expose: true
+  name: Big screen
+  aliases:
+      - TV
+      - Samsung TV
+  room: Living room
+switch.stereo:
+  expose: true
+  name: Stereo
+  room: Living room
+switch.vetrak:
+  expose: true
+  name: Fan
+  room: Playroom
+switch.zalevani_zahrady:
+  expose: true
+  name: Garden water
+  room: Garden

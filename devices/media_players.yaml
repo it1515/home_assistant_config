@@ -1,0 +1,18 @@
+# Stary samsung
+- platform: samsungtv
+  host: !secret samsung_vojta_ip
+  name: Samsung Smart TV - Vojta
+  #port: 8001
+
+# UE65MU6172
+- platform: samsungtv
+  host: !secret samsung_bigscreen_ip
+  name: Samsung Smart TV - Big Screen
+  mac: !secret samsung_bigscreen_mac
+  port: 8001
+  timeout: 5
+
+- platform: mpd
+  host: !secret mpd_ip
+  port: 6600
+  name: MPDSERVER

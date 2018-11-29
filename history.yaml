@@ -1,0 +1,6 @@
+include:
+  domains:
+    - sensor
+    - switch
+    - light
+    - media_player

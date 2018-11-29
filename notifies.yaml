@@ -1,0 +1,28 @@
+- platform: smtp
+  name: alert_gmail
+  server: smtp.gmail.com
+  port: 587
+  timeout: 15
+  sender: !secret hassemail
+  encryption: starttls
+  username: !secret hassemail
+  password: !secret smtp_pw
+  recipient:
+    - !secret mujemail
+    - !secret tatuvemail
+  sender_name: Můj Home Assistant
+- platform: smtp
+  name: alert_gmail2
+  server: smtp.gmail.com
+  port: 587
+  timeout: 15
+  sender: !secret hassemail
+  encryption: starttls
+  username: !secret hassemail
+  password: !secret smtp_pw
+  recipient:
+    - !secret mujemail
+  sender_name: Můj Home Assistant
+- platform: pushbullet
+  name: notify_pushbullet
+  api_key: !secret pushbullet_api

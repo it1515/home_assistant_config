@@ -1,0 +1,7 @@
+host: !secret influxdbh
+port: 8086
+database: !secret influxdb
+username: !secret influxdbu
+password: !secret influxdbpw
+max_retries: 3
+default_measurement: state

@@ -1,0 +1,23 @@
+radio_channels:
+  name: Radio kanály
+  options:
+   - Evropa 2
+   - Evropa 2 (TOP 40)
+   - Dance radio
+   - Relax
+   - Kiss
+   - Expres
+   - Arizona country
+   - Virgin radio
+  initial: Evropa 2 (TOP 40)
+  icon: mdi:music-note
+radio_speakers:
+  name: Reproduktory
+  options:
+   - Vojtův pokoj
+   - Obývák Stereo
+   - Obývák Google
+   - Obývák
+   - Všude
+  initial: Vojtův pokoj
+  icon: mdi:speaker-wireless

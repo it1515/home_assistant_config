@@ -1,0 +1,17 @@
+- name: School
+  latitude: !secret latitude_s
+  longitude: !secret longitude_s
+  radius: 45
+  icon: mdi:school
+
+- name: Work
+  latitude: !secret latitude_w
+  longitude: !secret longitude_w
+  radius: 250
+  icon: mdi:worker
+
+- name: Home
+  latitude: !secret latitude_h
+  longitude: !secret longitude_h
+  radius: 25
+  icon: mdi:account-multiple

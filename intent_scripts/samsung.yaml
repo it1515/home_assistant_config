@@ -1,0 +1,34 @@
+TV:
+  speech:
+    text: Turning TV {{ OnOff }} with {{ TvApp }}
+  action:
+    - service_template: >
+        {%- if OnOff == "on" -%}
+          switch.turn_on
+        {%- elif OnOff == "off" -%}
+          switch.turn_off
+        {%- endif -%}
+      data:
+        entity_id: switch.bigscreen
+    - delay:
+        seconds: 3
+    - service:
+        script.turn_on
+      data_template:
+        entity_id: > 
+          {%- if TvApp == "Channels" -%}
+            script.1524666641065
+          {%- elif TvApp == "Youtube" -%}
+            script.1524666641069
+          {%- elif TvApp == "HBO" -%}
+            script.1524666641064
+          {%- endif -%}
+Channels:
+  speech:
+    text: Switching to Channel {{ number }}
+  action:
+    - service: media_player.media_play
+      data_template:
+        entity_id: media_player.samsung_smart_tv__big_screen
+        media_content_id: '{{ number }}'
+        media_content_type: 'channel'

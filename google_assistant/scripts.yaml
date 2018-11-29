@@ -1,0 +1,52 @@
+script.1524666641064:
+  expose: true
+  name: HBO
+  room: Living room
+script.1524666641065:
+  expose: true
+  name: TV Channels
+  room: Living room
+script.1524666641066:
+  expose: true
+  name: Setup
+  aliases:
+      - hifi
+  room: Living room
+script.1524666641067:
+  expose: true
+  name: play TV
+  room: Living room
+script.1524666641068:
+  expose: true
+  name: pause TV
+  aliases:
+      - stop tv
+  room: Living room
+script.1524666641069:
+  expose: true
+  name: YouTube
+  room: Living room
+script.1519748767318:
+  expose: true
+  name: What song
+  room: Utility
+script.cca_obyvak_join_icecast:
+  expose: true
+  name: Icecast living room Chromecast
+  room: Living room
+script.gh_mini_vojtuv_join_icecast:
+  expose: true
+  name: Icecast Nesty Google
+  room: Nesty room
+script.gh_mini_obyvak_join_icecast:
+  expose: true
+  name: Icecast living room Google
+  room: Living room
+script.gh_everything_join_icecast:
+  expose: true
+  name: Icecast Everything
+  room: Utility
+script.gh_every_obyvak_join_icecast:
+  expose: true
+  name: Icecast living room
+  room: Living room

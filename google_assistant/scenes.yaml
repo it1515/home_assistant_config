@@ -1,0 +1,16 @@
+scene.cinema:
+  expose: true
+  name: Cinema
+  room: Living room
+scene.office:
+  expose: true
+  name: Office
+  room: Living room
+scene.relax:
+  expose: true
+  name: Relax
+  room: Living room
+scene.dark:
+  expose: true
+  name: Dark
+  room: Living room

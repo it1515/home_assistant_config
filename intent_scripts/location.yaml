@@ -1,0 +1,10 @@
+WhereAreWeIntent:
+  speech:
+    text: >
+      {%- if is_state('device_tracker.iphone_nesty', 'home') and
+               is_state('device_tracker.iphone_martin', 'home') -%}
+        You are both at home.
+      {%- else -%}
+        Vojta is at {{ states("device_tracker.iphone_nesty") }}
+        and Martin is at {{ states("device_tracker.iphone_martin") }}
+      {% endif %}

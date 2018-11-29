@@ -1,0 +1,28 @@
+TwitchAttribute:
+  speech:
+    text: >
+      {%- for state in states.sensor -%}
+        {%- if state.name == streamer -%}
+          {%- if state.attributes.title == "" -%}
+            {{ streamer }} is offline.
+          {%- else -%}
+            {%- if twitchattribute == "game" -%}
+              {{ streamer }} is playing {{ state.attributes.game }}
+            {%- else -%}
+              {{ streamer }} title is {{ state.attributes.title }}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+WhoStreaming:
+  speech:
+    text: >
+      {%- for state in states.sensor -%}
+        {%- if state.state == "streaming" -%}
+          "{{ state.name }} is {{ state.state }} "
+        {%- elif loop.last -%}
+          none one else.
+        {%- endif -%}
+      {%- else -%}
+        Sorry, I don't see any sensors in your home.
+      {%- endfor -%}

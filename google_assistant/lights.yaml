@@ -1,0 +1,51 @@
+light.bar1:
+  expose: true
+  room: Bar
+light.bar2:
+  expose: true
+  room: Bar
+light.bar3:
+  expose: true
+  room: Bar
+light.bar_lights:
+  expose: false
+  room: Bar
+light.bath1:
+  expose: true
+  room: Bathroom
+light.bath2:
+  expose: true
+  room: Bathroom
+light.bathroom_lights:
+  expose: false
+  room: Bathroom
+light.bedroom_lights:
+  expose: true
+  room: Bedroom
+light.living1:
+  expose: true
+  room: Living room
+light.living2:
+  expose: true
+  room: Living room
+light.living3:
+  expose: true
+  room: Living room
+light.living4:
+  expose: true
+  room: Living room
+light.living_room_lights:
+  expose: false
+  room: Living room
+light.nesty1:
+  expose: true
+  room: Playroom
+light.nesty2:
+  expose: true
+  room: Playroom
+light.nesty3:
+  expose: true
+  room: Playroom
+light.playroom_lights:
+  expose: false
+  room: Playroom

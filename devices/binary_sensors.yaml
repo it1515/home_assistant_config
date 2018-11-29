@@ -1,0 +1,19 @@
+- platform: mqtt
+  name: Rozpoznání obličeje Vojta
+  state_topic: !secret mqtt_state_top_1
+  availability_topic: !secret mqtt_available_top
+  device_class: motion
+- platform: mqtt
+  name: Rozpoznání obličeje Martin
+  state_topic: !secret mqtt_state_top_2
+  availability_topic: !secret mqtt_available_top
+  device_class: motion
+- platform: mqtt
+  name: Neznámý obličej
+  state_topic: !secret mqtt_state_top_3
+  availability_topic: !secret mqtt_available_top
+  device_class: motion
+- platform: mqtt
+  name: SSL MQTT TEST
+  state_topic: !secret mqtt_state_top_6
+  device_class: light

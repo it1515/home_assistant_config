@@ -1,0 +1,33 @@
+title: Bordel
+id: trash
+icon: mdi:trash-can-outline
+cards:
+- type: custom:card-modder
+  card:
+    type: entities
+    title: Skripty
+    show_header_toggle: false
+    entities:
+      - script.test_push
+      - script.1519563519467
+      - script.1519563823306
+      - script.1519564011681
+      - script.1519748160086
+      - script.1519748767317
+      - script.1524666641064
+      - script.1524666641065
+      - script.1524666641066
+      - script.1524666641067
+      - script.1524666641068
+      - script.1524666641069
+      - script.1524666641070
+      - script.1524666641071
+      - script.1519748767318
+      - script.test_notification
+      - script.posli_odkaz
+      - script.gh_mini_vojtuv_join_icecast
+      - script.cca_obyvak_join_icecast
+      - script.rnd_lights
+      - script.powertv
+  style:             
+    !include grey_card.yaml

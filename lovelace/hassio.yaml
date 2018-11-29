@@ -1,0 +1,52 @@
+title: HassIO
+id: hassio
+icon: mdi:home-assistant
+cards:
+- type: custom:card-modder
+  card:
+    type: horizontal-stack
+    cards:
+      - type: picture-entity
+        entity: device_tracker.iphone_nesty
+        name: Vojta
+        state_image:
+          "home": /local/img/vojta1.png
+          "not_home": /local/img/vojta2.png
+          "Work": /local/img/vojta3.png
+          "School": /local/img/vojta4.png
+      - type: picture-entity
+        entity: device_tracker.iphone_martin
+        name: Martin
+        state_image:
+          "home": /local/img/martin1.png
+          "not_home": /local/img/martin2.png
+          "Work": /local/img/martin3.png
+          "School": /local/img/martin4.png
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card:
+    type: entities
+    entities:
+      - entity: binary_sensor.rozpoznani_obliceje_vojta
+        secondary_info: last-changed
+      - entity: binary_sensor.rozpoznani_obliceje_martin
+        secondary_info: last-changed
+      - entity: binary_sensor.neznamy_oblicej
+        secondary_info: last-changed
+      - entity: binary_sensor.ssl_mqtt_test
+        secondary_info: last-changed
+  style:             
+    !include grey_card.yaml
+- !include radio.yaml
+- type: custom:card-modder
+  card:
+    type: weather-forecast
+    entity: weather.pocasi_opava
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card:
+    !include speedtest.yaml
+  style:             
+    !include grey_card.yaml

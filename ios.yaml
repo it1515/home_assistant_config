@@ -1,0 +1,20 @@
+push:
+  categories:
+    - name: lights
+      identifier: 'lights'
+      actions:
+        - identifier: 'LIGHTSOFF'
+          title: 'Turn Lights Off'
+          activationMode: 'background'
+          authenticationRequired: no
+          destructive: no
+          behavior: 'default'
+    - name: location
+      identifier: 'location'
+      actions:
+        - identifier: 'LOCATION'
+          title: 'Hodně štěstí'
+          activationMode: 'background'
+          authenticationRequired: no
+          destructive: no
+          behavior: 'default'

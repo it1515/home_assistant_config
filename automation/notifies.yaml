@@ -1,0 +1,11 @@
+## NOTIFY SMTP GMAIL ##
+- id: notify_gmail
+  action:
+  - data_template:
+      message: "[ALERT] {% if is_state('switch.zalevani_zahrady', 'on') %}Začalo{% else %}Skončilo{% endif %} zalévání zahrady.
+        Aktuální čas je {{ now().strftime('%H:%M') }} . Aktuální teplota venku je {{ states.sensor.pocasi_temperature.state }} stupňů."
+    service: notify.alert_gmail
+  alias: skoncilo zalevani zahrady notify
+  trigger:
+    - platform: state
+      entity_id: switch.zalevani_zahrady

@@ -1,0 +1,24 @@
+radio_volume:
+  name: Volume
+  initial: 1
+  min: 0
+  max: 1
+  step: 0.01
+
+cca_obyvak_volume:
+  name: Volume CCA Obývák
+  min: 0
+  max: 1
+  step: 0.01
+
+gh_obyvak_volume:
+  name: Volume GH Obývák
+  min: 0
+  max: 1
+  step: 0.01
+
+gh_vojta_volume:
+  name: Volume GH Vojtův pokoj
+  min: 0
+  max: 1
+  step: 0.01

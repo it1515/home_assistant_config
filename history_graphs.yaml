@@ -1,0 +1,7 @@
+gr1:
+  name: Rain graph
+  entities:
+    - sensor.pocasi_precip_intensity
+    - sensor.pocasi_humidity
+  hours_to_show: 6
+  refresh: 120

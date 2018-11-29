@@ -1,0 +1,84 @@
+title: Světla
+id: lights
+icon: mdi:lightbulb-outline
+cards:
+- type: custom:card-modder
+  card:
+    type: entities
+    show_header_toggle: false
+    title: Nestyho pokoj
+    entities:
+      - entity: light.playroom_lights
+        type: custom:slider-entity-row
+      - entity: light.nesty1
+        type: custom:slider-entity-row
+      - entity: light.nesty2
+        type: custom:slider-entity-row
+      - entity: light.nesty3
+        type: custom:slider-entity-row
+      - type: divider
+      - entity: switch.circadian_lighting_circadian_nesty
+      - entity: media_player.google_home_playroom
+        type: "custom:mini-media-player"
+        group: true
+        hide_controls: true
+        name: Playroom
+        icon: mdi:google-home
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card:
+    type: entities
+    show_header_toggle: false
+    title: Ložnice
+    entities:
+      - entity: light.bedroom_lights
+        type: custom:slider-entity-row
+      - light.bed1
+      - light.bed2
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card:
+    type: entities
+    show_header_toggle: false
+    title: Obývák
+    entities:
+      - entity: light.living_room_lights
+        type: custom:slider-entity-row
+      - light.living1
+      - light.living2
+      - light.living3
+      - light.living4
+      - type: divider
+      - entity: media_player.google_home_obyvak
+        icon: mdi:google-home
+      - entity: media_player.chromecast_audio_obyvak
+        icon: mdi:google-chrome
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card:
+    type: entities
+    show_header_toggle: false
+    title: Koupelna
+    entities:
+      - entity: light.bathroom_lights
+        type: custom:slider-entity-row
+      - light.bath1
+      - light.bath2
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card:
+    type: entities
+    show_header_toggle: false
+    title: Bar
+    entities:
+      - entity: light.bar_lights
+        type: custom:slider-entity-row
+      - light.bar1
+      - light.bar2
+      - light.bar3
+  style:             
+    !include grey_card.yaml

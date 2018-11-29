@@ -1,0 +1,26 @@
+title: Zahrada
+id: garden
+icon: mdi:flower-tulip-outline
+cards:
+- type: custom:card-modder
+  card:
+    type: entities
+    entities:
+      - switch.zalevani_zahrady
+      - sensor.pocasi_temperature
+      - sensor.pocasi_summary
+      - sensor.pocasi_precip_intensity
+      - sensor.pocasi_humidity
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card:
+    type: history-graph
+    title: Rain graph
+    hours_to_show: 6
+    refresh_interval: 60
+    entities:
+      - sensor.pocasi_precip_intensity
+      - sensor.pocasi_humidity
+  style:             
+    !include grey_card.yaml

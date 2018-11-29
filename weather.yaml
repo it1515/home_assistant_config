@@ -1,0 +1,5 @@
+- platform: darksky
+  name: Počasí Opava
+  api_key: !secret darksky_api
+  units: si
+  mode: daily

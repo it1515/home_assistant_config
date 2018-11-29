@@ -1,0 +1,34 @@
+- platform: group
+  name: Playroom lights
+  entities:
+    - light.nesty1
+    - light.nesty2
+    - light.nesty3
+- platform: group
+  name: Living room lights
+  entities:
+    - light.living1
+    - light.living2
+    - light.living3
+    - light.living4
+- platform: group
+  name: Living room TV lights
+  entities:
+    - light.living3
+    - light.living4
+- platform: group
+  name: Bar lights
+  entities:
+    - light.bar1
+    - light.bar2
+    - light.bar3
+- platform: group
+  name: Bedroom lights
+  entities:
+    - light.bed1
+    - light.bed2
+- platform: group
+  name: Bathroom lights
+  entities:
+    - light.bath1
+    - light.bath2

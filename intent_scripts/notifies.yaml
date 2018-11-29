@@ -1,0 +1,25 @@
+TellUser:
+  speech:
+    text: >
+      Okey, I send message to {{ User }}.
+  action:
+    - service_template: >
+        {%- if User == "vojta" -%}
+          notify.notify_pushbullet
+        {%- else -%}
+          notify.ios_iphone_martin
+        {%- endif -%}
+      data:
+        message: >
+          {%- if User == "vojta" -%}
+            "Vojto máš na stole "      
+          {%- else -%}
+            "Martine máš na stole "
+          {%- endif -%}
+          {%- if Food == "dinner" -%}
+            večeři 
+          {%- elif Food == "breakfast" -%}
+            snídani
+          {%- else -%}
+            oběd
+          {%- endif -%}

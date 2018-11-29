@@ -1,0 +1,3 @@
+rnd_lights:
+    initial: 5
+    step: 1

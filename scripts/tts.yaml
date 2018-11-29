@@ -1,0 +1,49 @@
+'1519748160086':
+  alias: speak
+  sequence:
+  - data:
+      entity_id: media_player.mpdserver
+      message: Ahoj Vojto, jak se dneska máš?
+      language: cs
+    service: tts.google_say
+  - delay:
+      seconds: 7
+  - service: script.turn_on
+    entity_id: script.radio_script
+'1519748767317':
+  alias: kolik je hodin
+  sequence:
+  - data_template:
+      entity_id: >
+        {% if is_state("input_select.radio_speakers", "Vojtův pokoj") %} media_player.google_home_playroom
+        {% elif is_state("input_select.radio_speakers", "Obývák Stereo") %} media_player.chromecast_audio_obyvak
+        {% elif is_state("input_select.radio_speakers", "Obývák Google") %} media_player.google_home_obyvak
+        {% elif is_state("input_select.radio_speakers", "Obývák") %} media_player.obyvak
+        {% elif is_state("input_select.radio_speakers", "Všude") %} media_player.home_group
+        {% endif %}
+      language: cs
+      message: Zrovna teď je {{ now().strftime("%H:%M") }} . Jaké máš plány na večer
+        Vojto?
+    service: tts.google_say
+  - delay:
+      seconds: 7
+  - service: script.turn_on
+    entity_id: script.radio_script
+'1519748767318':
+  alias: What is this song
+  sequence:
+  - data_template:
+      entity_id: >
+        {% if is_state("input_select.radio_speakers", "Vojtův pokoj") %} media_player.google_home_playroom
+        {% elif is_state("input_select.radio_speakers", "Obývák Stereo") %} media_player.chromecast_audio_obyvak
+        {% elif is_state("input_select.radio_speakers", "Obývák Google") %} media_player.google_home_obyvak
+        {% elif is_state("input_select.radio_speakers", "Obývák") %} media_player.obyvak
+        {% elif is_state("input_select.radio_speakers", "Všude") %} media_player.home_group
+        {% endif %}
+      language: en
+      message: .{{ states.media_player.mpdserver.attributes.media_title }}
+    service: tts.google_say
+  - delay:
+      seconds: 3
+  - service: script.turn_on
+    entity_id: script.radio_script

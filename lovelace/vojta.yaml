@@ -1,0 +1,51 @@
+title: Vojta
+id: vojta
+icon: mdi:guy-fawkes-mask
+cards:
+- type: custom:card-modder
+  card:
+    type: entities
+    title: "Vojt\u016Fv pokoj"
+    show_header_toggle: false
+    entities:
+      - switch.vetrak
+      - script.gh_mini_vojtuv_join_icecast
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card:
+    type: entities
+    title: Steam
+    show_header_toggle: false
+    entities:
+      - sensor.steam_76561198067076911
+      - sensor.what_iam_playing
+      - sensor.nestycze
+  style:             
+    !include grey_card.yaml
+- !include radio.yaml
+- type: media-control
+  entity: media_player.mpdserver
+- type: media-control
+  entity: media_player.google_home_playroom
+- type: custom:card-modder
+  card:
+    type: custom:tracker-card
+    title: Updates
+    trackers:
+      - sensor.custom_card_tracker
+      - sensor.custom_component_tracker
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card:
+    type: entities
+    title: Raspberry
+    show_header_toggle: false
+    entities:
+      - sensor.processor_use
+      - sensor.disk_use_percent_home
+      - sensor.memory_free
+      - sensor.last_boot
+  style:             
+    !include grey_card.yaml

@@ -1,0 +1,87 @@
+- action: 
+  - service: switch.turn_off
+    data:
+      entity_id: switch.zalevani_zahrady
+  - service: notify.ios_iphone_nesty
+    data:
+      message: "Vypl jsem zalevaní zahrady"
+      data:
+        push:
+          badge: 5
+          category: "lights"
+        action_data:
+          entity_id: light.nesty1
+  alias: hodina zalevani
+  trigger:
+  - platform: state
+    entity_id: switch.zalevani_zahrady
+    to: 'on'
+    for:
+        hours: 1
+- id: action_push_message
+  alias: Action push message
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: group.all_lights
+      to: 'on'
+      for:
+        minutes: 30
+  condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: 'device_tracker.iphone_nesty'
+          state: 'not_home'
+        - condition: state
+          entity_id: 'device_tracker.iphone_martin'
+          state: 'not_home'     
+  action:
+    - service: notify.ios_iphone_nesty
+      data:
+        message: "Zapomněl jsi vypnout světla"
+        data:
+          push:
+            badge: 5
+            category: "lights"
+          action_data:
+            entity_id: group.all_lights
+    - service: notify.ios_iphone_martin
+      data:
+        message: "Zapomněl jsi vypnout světla"
+        data:
+          push:
+            badge: 5
+            category: "lights"
+          action_data:
+            entity_id: group.all_lights
+- id: push_notify_action
+  alias: Push notify action
+  initial_state: on
+  trigger:
+    - platform: event
+      event_type: ios.notification_action_fired
+      event_data:
+        actionName: LIGHTSOFF
+  action:
+    service: light.turn_off
+    entity_id: group.all_lights
+- id: nesty_location
+  alias: Action push message
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: 'device_tracker.iphone_nesty'
+      to: 'School'
+      for:
+        minutes: 5
+  action:
+    service: notify.ios_iphone_martin
+    data:
+      message: "Vojta už je ve škole :D"
+      data:
+        push:
+          badge: 2
+          category: "location"
+        action_data:
+          entity_id: 'device_tracker.iphone_nesty'

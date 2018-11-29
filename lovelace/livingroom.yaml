@@ -1,0 +1,109 @@
+title: "Ob\xFDv\xE1k"
+id: living
+icon: mdi:sofa
+cards:
+- type: vertical-stack
+  cards:
+  - type: custom:card-modder
+    card:
+      type: entities
+      entities:
+        - switch.stereo
+        - switch.bigscreen
+        - script.1524666641066
+        - script.1524666641067
+        - script.1524666641068
+    style:             
+      !include grey_card.yaml
+  - type: horizontal-stack
+    cards:
+      - type: custom:card-modder
+        card:
+          type: entity-button
+          entity: script.1524666641065
+          name: Channels
+          tap_action: toggle
+          service: script.turn_on
+        style:             
+          !include grey_card.yaml
+      - type: custom:card-modder
+        card:
+          type: entity-button
+          entity: script.1524666641064
+          name: HBO
+          tap_action: toggle
+          service: script.turn_on
+        style:             
+          !include grey_card.yaml
+      - type: custom:card-modder
+        card:
+          type: entity-button
+          entity: script.1524666641069
+          name: YouTube
+          tap_action: toggle
+          service: script.turn_on
+        style:             
+          !include grey_card.yaml
+- type: custom:card-modder
+  card:  
+    type: entities
+    title: Icecast1
+    show_header_toggle: true
+    entities:
+      - script.next_track_mopidy1
+      - script.prev_track_mopidy1
+      - script.cca_obyvak_join_icecast
+      - script.gh_mini_obyvak_join_icecast
+      - script.gh_every_obyvak_join_icecast
+      - script.gh_everything_join_icecast
+  style:             
+    !include grey_card.yaml
+- !include radio.yaml
+- type: custom:card-modder
+  card: 
+    type: custom:mini-media-player
+    entity: media_player.mpdserver
+    artwork_border: true
+    show_source: true
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card: 
+    type: custom:mini-media-player
+    entity: media_player.samsung_smart_tv__big_screen
+    artwork_border: true
+    show_source: true
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card: 
+    type: custom:mini-media-player
+    entity: media_player.chromecast_audio_obyvak
+    artwork_border: true
+    show_source: true
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card: 
+    type: custom:mini-media-player
+    entity: media_player.google_home_obyvak
+    artwork_border: true
+    show_source: true    
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card: 
+    type: custom:mini-media-player
+    entity: media_player.obyvak
+    artwork_border: true
+    show_source: true
+  style:             
+    !include grey_card.yaml
+- type: custom:card-modder
+  card: 
+    type: custom:mini-media-player
+    entity: media_player.home_group
+    artwork_border: true
+    show_source: true
+  style:             
+    !include grey_card.yaml

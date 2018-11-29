@@ -1,0 +1,49 @@
+cca_obyvak_join_icecast:
+  alias: Chromecast Audio obývák join icecast
+  sequence:
+  - delay: '00:00:05'
+  - service: media_player.play_media
+    data_template:
+      entity_id: media_player.chromecast_audio_obyvak
+      media_content_id: !secret mopidy_address
+      media_content_type: 'audio/mp4'
+
+gh_mini_vojtuv_join_icecast:
+  alias: Google Home mini playroom join icecast
+  sequence:
+  - delay: '00:00:05'
+  - service: media_player.play_media
+    data_template:
+      entity_id: media_player.google_home_playroom
+      media_content_id: !secret mopidy_address
+      media_content_type: 'audio/mp4'
+
+gh_mini_obyvak_join_icecast:
+  alias: Google Home mini obývák join icecast
+  sequence:
+  - delay: '00:00:05'
+  - service: media_player.play_media
+    data_template:
+      entity_id: media_player.google_home_obyvak
+      media_content_id: !secret mopidy_address
+      media_content_type: 'audio/mp4'
+
+gh_everything_join_icecast:
+  alias: Všechny Google zařízení join icecast
+  sequence:
+  - delay: '00:00:05'
+  - service: media_player.play_media
+    data_template:
+      entity_id: media_player.home_group
+      media_content_id: !secret mopidy_address
+      media_content_type: 'audio/mp4'
+
+gh_every_obyvak_join_icecast:
+  alias: Všechny Obývák Google zařízení join icecast
+  sequence:
+  - delay: '00:00:05'
+  - service: media_player.play_media
+    data_template:
+      entity_id: media_player.obyvak
+      media_content_id: !secret mopidy_address
+      media_content_type: 'audio/mp4'

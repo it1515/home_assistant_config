@@ -1,0 +1,16 @@
+auto_start: False
+filter:
+  include_domains:
+    - switch
+    - light
+  exclude_entities:
+    - switch.radio2
+entity_config:
+  switch.bigscreen:
+    name: Big screen
+  switch.stereo:
+    name: Stereo
+  switch.vetrak:
+    name: Fan
+  switch.zalevani_zahrady:
+    name: Garden water

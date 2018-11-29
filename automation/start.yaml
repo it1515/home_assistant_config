@@ -1,0 +1,27 @@
+- alias: 'Start HomeKit'
+  trigger:
+  - platform: homeassistant
+    event: start
+  action:
+  - delay: 00:05  # Waits 5 minutes
+  - service: homekit.start
+  - service: notify.ios_iphone_nesty
+    data:
+      message: "Start serveru"
+      data:
+        push:
+          badge: 5
+          category: "lights"
+        action_data:
+          entity_id: automation.start_homekit
+- alias: Random svetla
+  trigger:
+  - platform: numeric_state
+    entity_id: counter.rnd_lights
+    value_template: "{{ state.attributes.state | int }}"
+    above: 0
+  action:
+  - service: script.turn_on
+    data_template:
+      entity_id: script.rnd_lights
+  

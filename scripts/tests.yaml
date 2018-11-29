@@ -1,0 +1,63 @@
+test_push:
+    alias: 'Test Actionable Notification'
+    sequence:
+      - service: notify.ios_iphone_nesty
+        data:
+          message:  'Svetlo nad kompem!'
+          data:
+            push:
+              badge: 0
+              category: "nestylights"
+            action_data:
+              entity_id: light.nesty1
+test_switch:
+  alias: Switch on time
+  sequence:
+  - alias: ''
+    data:
+      entity_id: switch.testovaci_svetlo
+    service: switch.turn_on
+test_notification:
+  alias: Test Notification
+  sequence:
+  - service: notify.alert_gmail
+    data:
+      message: 'test notify by gmail'
+posli_odkaz:
+  sequence:
+  - service: notify.notify_pushbullet
+    data:
+      title: Youtube kanál
+      message: Tohle je můj kanál
+      data:
+        url: https://www.youtube.com/user/TheNestyCZ
+rnd_lights:
+  alias: Random svetla
+  sequence:
+  - service: light.turn_on
+    data_template:
+      entity_id: >
+        {{ [ 
+          "light.bar_lights" , "light.bathroom_lights" ,
+          "light.bedroom_lights" , "light.living_room_lights" ,
+          "light.living_room_tv_lights" , "light.playroom_lights"
+        ] | random }}
+  - delay: '00:00:03'
+  - service: light.turn_off
+    data_template:
+      entity_id: >
+        {{ [ 
+          "light.bar_lights" , "light.bathroom_lights" ,
+          "light.bedroom_lights" , "light.living_room_lights" ,
+          "light.living_room_tv_lights" , "light.playroom_lights"
+        ] | random }}
+  - service: counter.decrement
+    data:
+      entity_id: counter.rnd_lights
+counter_reset:
+  alias: Counter restart
+  sequence:
+  - delay: '00:00:01'
+  - service: counter.reset
+    data:
+      entity_id: counter.rnd_lights

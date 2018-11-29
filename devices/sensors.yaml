@@ -1,0 +1,85 @@
+- platform: steam_online
+  api_key: !secret steam_api_key
+  accounts:
+    - 76561198067076911
+
+- platform: speedtest
+  hour:
+    - 22
+    - 10
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+- platform: twitch
+  client_id: !secret twitch_client_id
+  channels:
+    - nestycze
+    - miken_tv
+    - sodapoppin
+    - dafran
+    - shroud
+
+- platform: time_date
+  display_options:
+  - 'time'
+
+- platform: darksky
+  name: pocasi
+  api_key: !secret darksky_api
+  language: cs
+  monitored_conditions:
+    - summary
+    - temperature
+    - precip_intensity
+    - humidity
+    - precip_type
+    - precip_probability
+
+- platform: template
+  sensors:
+    current_game:
+      friendly_name: "Current game"
+      value_template: "{{ states.sensor.steam_76561198067076911.attributes.game }}"
+    what_iam_playing:
+      friendly_name: "Status"
+      value_template: >-
+          {% if is_state('sensor.current_game', '') %}
+            Právě nic nehraju
+          {% else %}
+            Právě hraju {{ states.sensor.steam_76561198067076911.attributes.game }}
+          {% endif %}
+    what_iam_playing_en:
+      friendly_name: "Status"
+      value_template: >-
+          {% if is_state('sensor.current_game', '') %}
+            nothing
+          {% else %}
+            {{ states.sensor.steam_76561198067076911.attributes.game }}
+          {% endif %}
+    samsung_state_bigscreen:
+      friendly_name: "Big Screen Status"
+      value_template: "{{ states.media_player.samsung_smart_tv__big_screen.state }}"
+    samsung_volume_bigscreen:
+      friendly_name: "Big Screen Status"
+      value_template: "{{ states.media_player.samsung_smart_tv__big_screen.attributes.volume_level }}"
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_free
+    - type: last_boot
+    - type: processor_use
+
+- platform: waze_travel_time
+  origin: device_tracker.iphone_martin
+  destination: zone.home
+  region: 'EU'
+  name: Martin to Home
+- platform: waze_travel_time
+  origin: device_tracker.iphone_nesty
+  destination: zone.home
+  region: 'EU'
+  name: Vojta to Home

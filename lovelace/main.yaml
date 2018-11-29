@@ -1,0 +1,22 @@
+title: My Awesome Home
+resources:
+  - url: /local/js/tracker-card.js
+    type: js
+  - url: /local/js/slider-entity-row.js
+    type: js
+  - url: /local/js/card-modder.js
+    type: js
+  - url: /local/custom-lovelace/swipe-card/swipe-card.js?v=1.1.0
+    type: module
+  - url: /local/js/mini-media-player.js?v=0.9.1
+    type: module
+background: center / cover no-repeat url("/local/img/background.png") fixed
+views:
+  - !include hassio.yaml
+  - !include floorplan.yaml
+  - !include floorplan2.yaml
+  - !include lights.yaml
+  - !include livingroom.yaml
+  - !include vojta.yaml
+  - !include garden.yaml
+  - !include trash.yaml

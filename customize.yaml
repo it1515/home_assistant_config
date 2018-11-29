@@ -1,0 +1,16 @@
+switch.zalevani_zahrady:
+  icon: mdi:flower-tulip
+switch.vetrak:
+  icon: mdi:fan
+switch.stereo:
+  icon: mdi:speaker-wireless
+switch.bigscreen:
+  icon: mdi:television
+media_player.mpdserver:
+  icon: mdi:music
+script.1524666641064:
+  icon: mdi:movie-roll
+script.1524666641065:
+  icon: mdi:television-box
+script.1524666641069:
+  icon: mdi:youtube

@@ -1,0 +1,61 @@
+radio_script:
+  alias: Radio script
+  sequence:
+  - service: media_player.play_media
+    data_template:
+      entity_id: media_player.mpdserver
+      media_content_id: >
+        {% if is_state("input_select.radio_channels", "Evropa 2") %} evropa2-128.mp3 
+        {% elif is_state("input_select.radio_channels", "Evropa 2 (TOP 40)") %} web-e2-hot 
+        {% elif is_state("input_select.radio_channels", "Dance radio") %} danceradio128.mp3 
+        {% elif is_state("input_select.radio_channels", "Relax") %} relax128.mp3 
+        {% elif is_state("input_select.radio_channels", "Kiss") %} kissmoravaov128.mp3  
+        {% elif is_state("input_select.radio_channels", "Expres") %} expres-128.mp3
+        {% elif is_state("input_select.radio_channels", "Arizona country") %} arizonas-classic-country
+        {% elif is_state("input_select.radio_channels", "Virgin radio") %} virgin-radio-oman
+        {% endif %}
+      media_content_type: playlist  
+  - delay: 
+      seconds: 3
+  - service: script.turn_on
+    data_template:
+      entity_id: >
+          {% if is_state("input_select.radio_speakers", "Vojtův pokoj") %} script.gh_mini_vojtuv_join_icecast
+          {% elif is_state("input_select.radio_speakers", "Obývák Stereo") %} script.cca_obyvak_join_icecast
+          {% elif is_state("input_select.radio_speakers", "Obývák Google") %} script.gh_mini_obyvak_join_icecast
+          {% elif is_state("input_select.radio_speakers", "Obývák") %} script.gh_every_obyvak_join_icecast 
+          {% elif is_state("input_select.radio_speakers", "Všude") %} script.gh_everything_join_icecast
+          {% endif %}
+'1524666641070':
+  alias: Radio in living room ON
+  sequence:
+  - service_template: "{% if is_state('switch.stereo', 'off') %} switch.turn_on {% endif %}"
+    entity_id: switch.stereo
+  - service: switch.broadlink_send_packet_192_168_1_202
+    data: 
+      packet:
+        - 'JgBsAAABKZMTEhM3ExITNxM3EzcTNxYPEzcTEhY0Fg8WDxYPFg8WNBY0Fg8WDxY0Fg8WDxYPFg8WDxY0FjQWDxY0FjQWNRUQFQAFRQABK0cWAAxaAAEqSRMABroKAAWZAAEpSRMADF0AASpIFAANBQAAAAAAAAAAAAAAAA=='
+'1524666641071':
+  alias: Radio in living room OFF
+  sequence:
+  - service: switch.broadlink_send_packet_192_168_1_202
+    data: 
+      packet:
+        - 'JgBsAAABKZMTEhM3ExITNxM3EzcTNxYPEzcTEhY0Fg8WDxYPFg8WNBY0Fg8WDxY0Fg8WDxYPFg8WDxY0FjQWDxY0FjQWNRUQFQAFRQABK0cWAAxaAAEqSRMABroKAAWZAAEpSRMADF0AASpIFAANBQAAAAAAAAAAAAAAAA=='
+  - service_template: "{% if is_state('switch.stereo', 'on') %} switch.turn_off {% endif %}"
+    entity_id: switch.stereo
+##OVLADANI STREAMU##
+next_track_mopidy1:
+  alias: next track on mopidy server 1
+  sequence:
+  - service: media_player.media_next_track
+    entity_id: media_player.mpdserver
+  - service_template: "{% if is_state('media_player.chromecast_audio_obyvak	', 'playing') %} script.turn_on {% endif %}"
+    entity_id: script.cca_obyvak_join_icecast
+prev_track_mopidy1:
+  alias: previous track on mopidy server 1
+  sequence:
+  - service: media_player.media_previous_track
+    entity_id: media_player.mpdserver
+  - service_template: "{% if is_state('media_player.chromecast_audio_obyvak	', 'playing') %} script.turn_on {% endif %}"
+    entity_id: script.cca_obyvak_join_icecast

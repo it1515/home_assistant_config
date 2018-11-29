@@ -1,0 +1,3 @@
+Temperature:
+  speech:
+    text: The temperature at Opava is {{ states('sensor.pocasi_temperature') }} degrees

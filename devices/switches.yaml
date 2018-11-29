@@ -1,0 +1,52 @@
+## MQTT ##
+- platform: mqtt
+  name: Větrák
+  state_topic: !secret mqtt_state_top_4
+  command_topic: !secret mqtt_state_cmd_4
+  payload_on: 1
+  payload_off: 0
+  qos: 1
+  retain: true
+  optimistic: true
+- platform: mqtt
+  name: Zalévání zahrady
+  state_topic: !secret mqtt_state_top_5
+  command_topic: !secret mqtt_state_cmd_5
+  payload_on: 1
+  payload_off: 0
+  qos: 1
+  retain: true
+  optimistic: false
+
+## BROADLINK ##
+- platform: broadlink
+  host: !secret rm_mini_ip
+  mac: !secret rm_mini_mac
+  type: rm_mini
+  switches:
+    stereo:
+      friendly_name: "Stereo"
+      command_on: 'JgBgAAABK5EVEBU1FTUVNRU1FTUVNRUQFTUVEBUQFRAVEBUQFRAVNRURFDUVERQ2FBEUNRURFBEUNhQRFDYUERQ2FBEUNhQ2FQAFIAABK0cVAAxbAAEsRxQADFwAASpIFQANBQAAAAAAAAAA=='
+      command_off: 'JgBgAAABK5EVEBU1FTUVNRU1FTUVNRUQFTUVEBUQFRAVEBUQFRAVNRURFDUVERQ2FBEUNRURFBEUNhQRFDYUERQ2FBEUNhQ2FQAFIAABK0cVAAxbAAEsRxQADFwAASpIFQANBQAAAAAAAAAA=='
+    
+## TEMPLATE SWITCH ##
+- platform: template
+  switches:
+    bigscreen:
+      friendly_name: "Samsung Big Screen Power"
+      value_template: "{{ is_state('media_player.samsung_smart_tv__big_screen', 'unknown') }}"
+      turn_on:
+        service: script.turn_on
+        data:
+          entity_id: script.powertv
+      turn_off:
+        service: media_player.turn_off
+        data:
+          entity_id: media_player.samsung_smart_tv__big_screen
+
+- platform: circadian_lighting
+  lights_ct:
+    - light.nesty1
+    - light.nesty2
+    - light.nesty3
+  name: Circadian nesty

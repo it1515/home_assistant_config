@@ -1,0 +1,7 @@
+include:
+  domains:
+    - sensor
+    - switch
+    - light
+purge_keep_days: 3
+purge_interval: 1

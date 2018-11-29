@@ -1,0 +1,188 @@
+### GROUPS ###
+
+## Default View ##
+default_view:
+  view: yes
+  name: HassIO
+  entities:
+    # - group.television 
+    - group.radio
+    - sensor.homepad_battery_level
+    - sensor.homepad_battery_state
+    - sensor.pocasi_temperature
+    - weather.pocasi_opava
+    - group.speedtest
+
+Television:
+  name: Televize
+  entities: 
+  - media_player.samsung_smart_tv__big_screen
+  - input_number.volume_tv_bigscreen
+  #- sensor.samsung_state_bigscreen
+  #- sensor.samsung_volume_bigscreen
+
+Radio:
+  name: Radio
+  entities:
+  - input_select.radio_channels
+  - input_select.radio_speakers
+  - script.radio_script
+  - media_player.mpdserver
+
+RadioObyvak:
+  name: Radio
+  entities:
+  - input_number.cca_obyvak_volume
+  - input_number.gh_obyvak_volume
+  - input_select.radio_channels
+  - input_select.radio_speakers
+  - script.radio_script
+  - media_player.mpdserver
+
+RadioVojta:
+  name: Radio
+  entities:
+  - input_number.gh_vojta_volume
+  - input_select.radio_channels
+  - input_select.radio_speakers
+  - script.radio_script
+  - media_player.mpdserver
+
+Speedtest:
+  name: Rychlost internetu
+  entities: 
+  - sensor.speedtest_ping
+  - sensor.speedtest_download
+  - sensor.speedtest_upload
+
+## OBYVACÍ POKOJ ##
+Obyvak_view:
+  view: yes
+  name: Obývák
+  entities:
+    - group.Icecast1
+    - group.radioobyvak
+    - panel_custom.tiles
+    - media_player.samsung_smart_tv__big_screen
+    - media_player.chromecast_audio_obyvak
+    - media_player.google_home_obyvak
+    - media_player.obyvak
+    - media_player.home_group
+    - switch.stereo
+    - switch.bigscreen
+    - switch.radio2
+    - script.1524666641064
+    - script.1524666641065
+    - script.1524666641066
+    - script.1524666641067
+    - script.1524666641068
+    - script.1524666641069
+
+Icecast1:
+  entities:
+    - script.next_track_mopidy1
+    - script.prev_track_mopidy1
+    - script.cca_obyvak_join_icecast
+    - script.gh_mini_obyvak_join_icecast
+    - script.gh_every_obyvak_join_icecast
+    - script.gh_everything_join_icecast
+
+
+
+## VOJTUV POKOJ ##
+Vojta_view:
+  view: yes
+  name: Vojta
+  entities:
+    - group.nestyroom
+    - group.steam
+    - group.radiovojta
+    - sensor.ipad__nesty_battery_level
+    - sensor.ipad__nesty_battery_state
+    - sensor.iphone_battery_level
+    - sensor.iphone_battery_state
+    - device_tracker.iphone_nesty
+    - group.pocasi
+    - script.gh_mini_vojtuv_join_icecast
+    - automation.budik
+    
+Nestyroom:
+  name: Vojtův pokoj osvětlení
+  entities:
+  - media_player.google_home_playroom
+  - switch.testovaci_svetlo
+  - switch.druhe_testovaci_svetlo
+  - switch.vetrak
+  - switch.zapinac
+  - switch.Samsung_Vojta_TV_Power
+
+Steam:
+  name: Steam
+  entities: 
+  - sensor.steam_76561198067076911
+  - sensor.what_iam_playing
+  - sensor.nestycze
+
+## MARTINUV POKOJ ##
+Martin_view:  
+  view: yes
+  name: Martin
+  entities:
+    - sensor.martins_ipad_battery_level
+    - sensor.martins_ipad_battery_state
+
+## ZAHRADA ##
+Garden_view:
+  view: yes
+  name: Zahrada
+  entities:
+    - switch.zalevani_zahrady
+    - sensor.pocasi_temperature
+    - sensor.pocasi_condition
+    - sensor.pocasi_rain
+    - sensor.pocasi_humidity
+    - history_graph.rain_graph
+    
+## STATUS VIEW ##
+Status_view:
+  view: yes
+  name: Status
+  entities:
+    - sensor.mpd_volume_level
+    - sensor.gh_vojta_volume_level
+    - sensor.gh_obyvak_volume_level
+    - sensor.cca_obyvak_volume_level
+    - sensor.homepad_battery_level
+
+## BORDEL/SKRIPTY AUTOMATIZACE ATD ##
+Garbage_view:
+  view: yes
+  name: Bordel
+  entities:
+    - group.skripty
+
+## SKRIPTY ##
+Skripty:
+  name: Skripty
+  control: hidden
+  entities: 
+  - script.test_push
+  - script.1519563519467
+  - script.1519563823306
+  - script.1519564011681
+  - script.1519748160086
+  - script.1519748767317
+  - script.1524666641064
+  - script.1524666641065
+  - script.1524666641066
+  - script.1524666641067
+  - script.1524666641068
+  - script.1524666641069
+  - script.1524666641070
+  - script.1524666641071
+  - script.1519748767318
+  - script.test_notification
+  - script.posli_odkaz
+  - script.stream_mopidy_to_cc
+  - script.gh_mini_vojtuv_join_icecast
+  - script.cca_obyvak_join_icecast

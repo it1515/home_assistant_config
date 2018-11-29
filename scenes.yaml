@@ -1,0 +1,84 @@
+- name: Relax
+  entities:
+    light.bar1:
+      state: on
+      color_temp: 352
+      brightness_pct: 50
+    light.bar2:
+      state: on
+      color_temp: 352
+      brightness_pct: 50
+    light.bar3:
+      state: on
+      color_temp: 352
+      brightness_pct: 50
+    light.living1:
+      state: on
+      color_temp: 352
+      brightness_pct: 50
+    light.living2:
+      state: on
+      color_temp: 352
+      brightness_pct: 50
+    light.living3:
+      state: off
+    light.living4:
+      state: off
+- name: Cinema
+  entities:
+    light.bar1:
+      state: on
+      color_temp: 454
+      brightness_pct: 50
+    light.bar2:
+      state: on
+      color_temp: 454
+      brightness_pct: 50
+    light.bar3:
+      state: on
+      color_temp: 454
+      brightness_pct: 50
+    light.living3:
+      state: on
+      color_temp: 454
+      brightness_pct: 50
+    light.living4:
+      state: on
+      color_temp: 454
+      brightness_pct: 50
+    light.living1:
+      state: off
+    light.living2:
+      state: off
+- name: Office
+  entities:
+    light.bar1:
+      state: on
+      color_temp: 250
+      brightness_pct: 100
+    light.bar2:
+      state: on
+      color_temp: 250
+      brightness_pct: 100
+    light.bar3:
+      state: on
+      color_temp: 250
+      brightness_pct: 100
+    light.living1:
+      state: on
+      color_temp: 250
+      brightness_pct: 100
+    light.living2:
+      state: on
+      color_temp: 250
+      brightness_pct: 100
+    light.living3:
+      state: off
+    light.living4:
+      state: off
+- name: Dark
+  entities:
+    light.bar_lights:
+      state: off
+    light.living_room_lights:
+      state: off

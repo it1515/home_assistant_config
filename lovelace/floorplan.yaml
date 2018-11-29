@@ -1,0 +1,64 @@
+title: Přízemí
+id: floorplan1
+icon: mdi:floor-plan
+panel: true
+cards:
+- type: picture-elements
+  image: /local/img/floorplan0.gif
+  elements:
+    - type: icon
+      icon: mdi:arrow-up-bold-outline
+      tap_action: navigate
+      navigation_path: /lovelace/floorplan2
+      style:
+        top: 15%
+        left: 10%
+        color: "#03a9f4"
+    - type: state-icon
+      tap_action: more-info
+      entity: light.living1
+      style:
+        top: 51%
+        left: 43%
+    - type: state-icon
+      tap_action: more-info
+      entity: light.living2
+      style:
+        top: 67%
+        left: 43%
+    - type: state-icon
+      tap_action: more-info
+      entity: light.living_room_tv_lights
+      style:
+        top: 72%
+        left: 26%
+    - type: state-icon
+      tap_action: more-info
+      entity: light.bar1
+      style:
+        top: 36%
+        left: 42%
+    - type: state-icon
+      tap_action: more-info
+      entity: light.bar2
+      style:
+        top: 36%
+        left: 45%
+    - type: state-icon
+      tap_action: more-info
+      entity: light.bar3
+      style:
+        top: 36%
+        left: 48%
+    - type: state-icon
+      tap_action: toggle
+      entity: switch.bigscreen
+      style:
+        top: 64%
+        left: 22%
+    - type: state-icon
+      tap_action: toggle
+      entity: switch.stereo
+      style:
+        top: 59%
+        left: 22%
