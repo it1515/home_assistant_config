@@ -101,6 +101,8 @@ ios: !include ios.yaml
 # cloud: !include cloud.yaml
 circadian_lighting:
 
+mdpo:
+
 #Počasí
 weather: !include weather.yaml
 
