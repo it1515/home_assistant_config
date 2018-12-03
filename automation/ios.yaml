@@ -30,12 +30,10 @@
   condition:
       condition: and
       conditions:
-        - condition: state
-          entity_id: 'device_tracker.iphone_nesty'
-          state: 'not_home'
-        - condition: state
-          entity_id: 'device_tracker.iphone_martin'
-          state: 'not_home'     
+        - condition: template
+          value_template: "{% if not is_state('device_tracker.iphone_nesty', 'home') %}true{% endif %}"
+        - condition: template
+          value_template: "{% if not is_state('device_tracker.iphone_martin', 'home') %}true{% endif %}"
   action:
     - service: notify.ios_iphone_nesty
       data:
