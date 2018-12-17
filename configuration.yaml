@@ -39,6 +39,10 @@ custom_updater: !include custom_updater.yaml
 
 #discovery:
 
+#Od verze HA 0.84 musí být lovelace nastavený na mode yaml aby se načítal z yaml souboru.
+lovelace:
+  mode: yaml
+
 hassio:
 
 updater:
