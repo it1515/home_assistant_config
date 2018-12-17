@@ -8,56 +8,106 @@ cards:
   elements:
     - type: icon
       icon: mdi:arrow-up-bold-outline
-      tap_action: navigate
+      tap_action: 
+        action: navigate
       navigation_path: /lovelace/floorplan2
       style:
         top: 15%
         left: 10%
         color: "#03a9f4"
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.living1
+          brightness_pct: 100
       entity: light.living1
       style:
         top: 51%
         left: 43%
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.living2
+          brightness_pct: 100
       entity: light.living2
       style:
         top: 67%
         left: 43%
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.living_room_tv_lights
+          brightness_pct: 100
       entity: light.living_room_tv_lights
       style:
         top: 72%
         left: 26%
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.bar1
+          brightness_pct: 100
       entity: light.bar1
       style:
         top: 36%
         left: 42%
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.bar2
+          brightness_pct: 100
       entity: light.bar2
       style:
         top: 36%
         left: 45%
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.bar3
+          brightness_pct: 100
       entity: light.bar3
       style:
         top: 36%
         left: 48%
     - type: state-icon
-      tap_action: toggle
+      tap_action: 
+        action: toggle
+      hold_action:
+        action: call-service
+        service: script.turn_on
+        service_data:
+          entity_id: script.1524666641064
       entity: switch.bigscreen
       style:
         top: 64%
         left: 22%
     - type: state-icon
-      tap_action: toggle
+      tap_action: 
+        action: toggle
       entity: switch.stereo
       style:
         top: 59%

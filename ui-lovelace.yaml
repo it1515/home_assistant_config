@@ -72,89 +72,141 @@ views:
       color: '#d8d8d8'}
     type: custom:card-modder
   icon: mdi:home-assistant
-  id: hassio
+  path: hassio
   title: HassIO
 - cards:
   - elements:
     - icon: mdi:arrow-up-bold-outline
       navigation_path: /lovelace/floorplan2
       style: {color: '#03a9f4', left: 10%, top: 15%}
-      tap_action: navigate
+      tap_action: {action: navigate}
       type: icon
     - entity: light.living1
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.living1}
       style: {left: 43%, top: 51%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.living2
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.living2}
       style: {left: 43%, top: 67%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.living_room_tv_lights
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.living_room_tv_lights}
       style: {left: 26%, top: 72%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.bar1
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.bar1}
       style: {left: 42%, top: 36%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.bar2
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.bar2}
       style: {left: 45%, top: 36%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.bar3
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.bar3}
       style: {left: 48%, top: 36%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: switch.bigscreen
+      hold_action:
+        action: call-service
+        service: script.turn_on
+        service_data: {entity_id: script.1524666641064}
       style: {left: 22%, top: 64%}
-      tap_action: toggle
+      tap_action: {action: toggle}
       type: state-icon
     - entity: switch.stereo
       style: {left: 22%, top: 59%}
-      tap_action: toggle
+      tap_action: {action: toggle}
       type: state-icon
     image: /local/img/floorplan0.gif
     type: picture-elements
   icon: mdi:floor-plan
-  id: floorplan1
   panel: true
+  path: floorplan1
   title: Přízemí
 - cards:
   - elements:
     - icon: mdi:arrow-down-bold-outline
       navigation_path: /lovelace/floorplan1
       style: {color: '#03a9f4', left: 10%, top: 15%}
-      tap_action: navigate
+      tap_action: {action: navigate}
       type: icon
     - entity: light.nesty1
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.nesty1}
       style: {left: 29%, top: 34%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.nesty2
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.nesty2}
       style: {left: 41%, top: 65%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.nesty3
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.nesty3}
       style: {left: 29%, top: 65%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.bath1
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.bath1}
       style: {left: 62%, top: 28%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.bath2
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.bath2}
       style: {left: 70%, top: 28%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     - entity: light.bedroom_lights
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data: {brightness_pct: 100, entity_id: light.bedroom_lights}
       style: {left: 65%, top: 61%}
-      tap_action: more-info
+      tap_action: {action: more-info}
       type: state-icon
     image: /local/img/floorplan1.gif
     type: picture-elements
   icon: mdi:floor-plan
-  id: floorplan2
   panel: true
+  path: floorplan2
   title: První patro
 - cards:
   - card:
@@ -229,7 +281,7 @@ views:
       color: '#d8d8d8'}
     type: custom:card-modder
   icon: mdi:lightbulb-outline
-  id: lights
+  path: lights
   title: Světla
 - cards:
   - cards:
@@ -323,7 +375,7 @@ views:
       color: '#d8d8d8'}
     type: custom:card-modder
   icon: mdi:sofa
-  id: living
+  path: living
   title: Obývák
 - cards:
   - card:
@@ -380,7 +432,7 @@ views:
       color: '#d8d8d8'}
     type: custom:card-modder
   icon: mdi:guy-fawkes-mask
-  id: vojta
+  path: vojta
   title: Vojta
 - cards:
   - card:
@@ -402,7 +454,7 @@ views:
       color: '#d8d8d8'}
     type: custom:card-modder
   icon: mdi:flower-tulip-outline
-  id: garden
+  path: garden
   title: Zahrada
 - cards:
   - card:
@@ -420,5 +472,5 @@ views:
       color: '#d8d8d8'}
     type: custom:card-modder
   icon: mdi:trash-can-outline
-  id: trash
+  path: trash
   title: Bordel

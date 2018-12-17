@@ -8,44 +8,87 @@ cards:
   elements:
     - type: icon
       icon: mdi:arrow-down-bold-outline
-      tap_action: navigate
+      tap_action: 
+        action: navigate
       navigation_path: /lovelace/floorplan1
       style:
         top: 15%
         left: 10%
         color: "#03a9f4"
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.nesty1
+          brightness_pct: 100
       entity: light.nesty1
       style:
         top: 34%
         left: 29%
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.nesty2
+          brightness_pct: 100
       entity: light.nesty2
       style:
         top: 65%
         left: 41%
     - type: state-icon
-      tap_action: more-info
-      entity: light.nesty3
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.nesty3
+          brightness_pct: 100
+      entity: light.nesty3 
       style:
         top: 65%
         left: 29%
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.bath1
+          brightness_pct: 100
       entity: light.bath1
       style:
         top: 28%
         left: 62%
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.bath2
+          brightness_pct: 100
       entity: light.bath2
       style:
         top: 28%
         left: 70%
     - type: state-icon
-      tap_action: more-info
+      tap_action: 
+        action: more-info
+      hold_action:
+        action: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.bedroom_lights
+          brightness_pct: 100
       entity: light.bedroom_lights
       style:
         top: 61%
