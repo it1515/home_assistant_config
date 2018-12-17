@@ -1,5 +1,5 @@
 title: Vojta
-id: vojta
+path: vojta
 icon: mdi:guy-fawkes-mask
 cards:
 - type: custom:card-modder

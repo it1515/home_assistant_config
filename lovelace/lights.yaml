@@ -1,5 +1,5 @@
 title: Světla
-id: lights
+path: lights
 icon: mdi:lightbulb-outline
 cards:
 - type: custom:card-modder

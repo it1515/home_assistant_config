@@ -1,5 +1,5 @@
 title: Bordel
-id: trash
+path: trash
 icon: mdi:trash-can-outline
 cards:
 - type: custom:card-modder

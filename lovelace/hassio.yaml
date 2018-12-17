@@ -1,5 +1,5 @@
 title: HassIO
-id: hassio
+path: hassio
 icon: mdi:home-assistant
 cards:
 - type: custom:card-modder

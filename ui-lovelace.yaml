@@ -8,6 +8,7 @@ resources:
 - {type: js, url: /local/js/tracker-card.js}
 - {type: js, url: /local/js/slider-entity-row.js}
 - {type: js, url: /local/js/card-modder.js}
+- {type: js, url: /local/js/card-tools.js}
 - {type: module, url: '/local/custom-lovelace/swipe-card/swipe-card.js?v=1.1.0'}
 - {type: module, url: '/local/js/mini-media-player.js?v=0.9.1'}
 title: My Awesome Home
@@ -391,7 +392,7 @@ views:
       color: '#d8d8d8'}
     type: custom:card-modder
   - card:
-      entities: [sensor.pocasi_rain, sensor.pocasi_humidity]
+      entities: [sensor.pocasi_precip_intensity, sensor.pocasi_humidity]
       hours_to_show: 6
       refresh_interval: 60
       title: Rain graph
