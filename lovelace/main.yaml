@@ -6,6 +6,8 @@ resources:
     type: js
   - url: /local/js/card-modder.js
     type: js
+  - url: /local/js/card-tools.js
+    type: js
   - url: /local/custom-lovelace/swipe-card/swipe-card.js?v=1.1.0
     type: module
   - url: /local/js/mini-media-player.js?v=0.9.1
